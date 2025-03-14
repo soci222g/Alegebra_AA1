@@ -2,13 +2,10 @@
 ////General
 
 
+PrintWriter output;
 
+//player
 
-////player
-// int PJ_speed; //
-// PVector PJ_position;
-// int radios_Player;
-  
  
 ////PNJ Aliats
 //  PVector PNJ1_position;
@@ -32,10 +29,10 @@
   
   
   
-//  //initalize player
-//  radios_Player = 30;
-//  PJ_position = new PVector(width/2,height/2);
-
+  //initalize player
+  radios_Player = 30;
+  PJ_position = new PVector(width/2,height/2);
+  PJ_speed = 0.01;
   
 // //initalize PNJ_aliats
 //   PNJ1_position = new PVector(width/2,0);
@@ -45,33 +42,35 @@
   
   
   
-//   PNJ2_activated = false;
-//   PNJ2_position = new PVector(random(width),random(height));
-//   PNJ_hp = 3;
-//}
+   PNJ2_activated = false;
+   PNJ2_position = new PVector(random(width),random(height));
+   PNJ_hp = 3;
+   
+   
+}
 
 
 
-//void draw(){
-//  background(255);
-//  MoviemtnPlayer(); // moviment player
-//  MoimentPNJ1Alai(); // moviment PNJ 1
-//  MoimentPNJ2Alai(); // Moviment PNJ 2
+void draw(){
+  background(255);
+   
+  // moviment player
+ // MoimentPNJ1Alai(); // moviment PNJ 1
+  // MoviemtnPlayerKeyboardMoimentPNJ2Alai(); // Moviment PNJ 2
+MoviemtnPlayerKeyboard();
 
-//}
 
-
-//void mouseMoved() {
+//printantge Player
+  fill(0);
+  ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
   
-
-//}
-
-//void MoviemtnPlayer(){ //moviemet del PJ
-
-//  fill(0);
-//  ellipse(mouseX,mouseY, radios_Player, radios_Player);
   
-//}
+}
+
+
+
+
+
 
 //void CollisonPlayerAllai(){
   
