@@ -20,16 +20,7 @@ void setup(){
   }
   
   //Posición inicial del PNJ en medio de la ventana
-  //x_pnj1 = width/2.0;
-  //y_pnj1 = height/2.0;
-  //x_pnj2 = width/1.5;
-  //y_pnj2 = height/1.5;
-  //x_pnj3 = width/2.5;
-  //y_pnj3 = height/2.0;
-  //x_pnj4 = width/2.5;
-  //y_pnj4 = height/2.0;
-  //x_pnj5 = width/2.0;
-  //y_pnj5 = height/2.0;
+
 }
 //DRAW
 void draw(){
@@ -46,40 +37,33 @@ void draw(){
     y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
   }
   
-  
-  //x_pnj1 = (1.0 - alfa1) *x_pnj1 + alfa1 * x_pj;
-  //y_pnj1 = (1.0 - alfa1) *y_pnj1 + alfa1 * y_pj;
-  //x_pnj2 = (1.0 - alfa2) *x_pnj2 + alfa2 * x_pj;
-  //y_pnj2 = (1.0 - alfa2) *y_pnj2 + alfa2 * y_pj;
-  //x_pnj3 = (1.0 - alfa3) *x_pnj3 + alfa3 * x_pj;
-  //y_pnj3 = (1.0 - alfa3) *y_pnj3 + alfa3 * y_pj;
-  //x_pnj4 = (1.0 - alfa4) *x_pnj4 + alfa4 * x_pj;
-  //y_pnj4 = (1.0 - alfa4) *y_pnj4 + alfa4 * y_pj;
-  //x_pnj5 = (1.0 - alfa5) *x_pnj5 + alfa5 * x_pj;
-  //y_pnj5 = (1.0 - alfa5) *y_pnj5 + alfa5 * y_pj;
   //Pintarlo
   //PNJ
-  fill(255,0,0); //<>//
-  ellipse(x_pnj[0],y_pnj[0],width/10.0,height/10.0);
-  //ellipse(x_pnj2,y_pnj2,width/10.0,height/10.0);
-  ////PNJ2
-  fill(92,44,120);
-  ellipse(x_pnj[1],y_pnj[1],width/15.0,height/15.0);
-  //ellipse(x_pnj2,y_pnj2,width/15.0,height/15.0);
-  ////PNJ3
-  fill(0,0,0);
-  ellipse(x_pnj[2],y_pnj[2],width/20.0,height/20.0);
-  //ellipse(x_pnj3,y_pnj3,width/20.0,height/20.0);
-  //PNJ4
-  fill(0,255,255);
-  ellipse(x_pnj[3],y_pnj[3],width/1.0,height/1.0);
-  //ellipse(x_pnj4,y_pnj4,width/1.0,height/1.0);
-  //PNJ5
-  fill(0,0,255);
-  ellipse(x_pnj[4],y_pnj[4],width/2.0,height/2.0);
-  //ellipse(x_pnj5,y_pnj5,width/2.0,height/2.0);
-  //PJ
-  fill(0,255,0);
-  ellipse(x_pj,y_pj,width/50.0,height/50.0);
+  for(int i = 0; i < NUM_PNJ; i++){
+    fill(255,0,255);
+    ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
+  }
+  //fill(255,0,0); //<>//
+  //ellipse(x_pnj[0],y_pnj[0],width/10.0,height/10.0);
+  ////ellipse(x_pnj2,y_pnj2,width/10.0,height/10.0);
+  //////PNJ2
+  //fill(92,44,120);
+  //ellipse(x_pnj[1],y_pnj[1],width/15.0,height/15.0);
+  ////ellipse(x_pnj2,y_pnj2,width/15.0,height/15.0);
+  //////PNJ3
+  //fill(0,0,0);
+  //ellipse(x_pnj[2],y_pnj[2],width/10.0,height/10.0);
+  ////ellipse(x_pnj3,y_pnj3,width/20.0,height/20.0);
+  ////PNJ4
+  //fill(0,255,255);
+  //ellipse(x_pnj[3],y_pnj[3],width/10.0,height/10.0);
+  ////ellipse(x_pnj4,y_pnj4,width/1.0,height/1.0);
+  ////PNJ5
+  //fill(0,0,255);
+  //ellipse(x_pnj[4],y_pnj[4],width/20.0,height/20.0);
+  ////ellipse(x_pnj5,y_pnj5,width/2.0,height/2.0);
+  ////PJ
+  //fill(0,255,0);
+  //ellipse(x_pj,y_pj,width/5.0,height/5.0);
 }
 //FUNCIONES
