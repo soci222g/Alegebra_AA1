@@ -1,0 +1,8 @@
+enum scean{
+  PLAYER_SELECT,
+  ENEMY_SELECT,
+  GAME_PLAY,
+  WIN,
+  LOST,
+  COUTN
+}
