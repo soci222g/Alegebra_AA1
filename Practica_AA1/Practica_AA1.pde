@@ -24,8 +24,8 @@ void setup(){
   background(255);
 
 
-  SetUp_element();
-   
+SetUp_element();
+   setUpEnemies();
 }
 
 
@@ -67,6 +67,8 @@ if(CurrentScean == scean.PLAYER_SELECT){
           
         fill(0,255,0);
         ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
+        
+        drawEnemies();
    }
    if(CurrentScean == scean.WIN){
     textSize(Tamany_Text_escollirElements);
