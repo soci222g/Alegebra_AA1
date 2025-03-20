@@ -4,7 +4,7 @@ int num_enemies;
 boolean IsSpawned;
 float x_pj, y_pj;
 //int NUM_PNJ = 5;
-float x_pnj[];//new float[NUM_PNJ]; //<>//
+float x_pnj[];//new float[NUM_PNJ]; //<>// //<>//
 float y_pnj[];//new float[NUM_PNJ];
 float alfa[]; //new float[NUM_PNJ];
 
@@ -14,13 +14,13 @@ void setUpEnemies(){
   
   x_pnj = new float[num_enemies];
   y_pnj = new float[num_enemies];
-//  alfa = new float[num_enemies];
+  alfa = new float[num_enemies];
   
   for(int i = 0; i < num_enemies; i++){ //for(int i = 0; i < NUM_PNJ; i++){
     x_pnj[i] = width/random(1.0,3.0);
     y_pnj[i] = height/random(1.0,3.0);
  //10 pasitos entre el PNJ y el PJ (alfa entre 0 y 1 para poder perseguir, si la ponemos en negativo huye)
-    //alfa[i] = random(-0.01,3.0);
+    alfa[i] = random(-0.01,3.0);
   }
   
   //Posición inicial del PNJ en medio de la ventana
@@ -37,10 +37,10 @@ void drawEnemies(){
   //Calculos
   //Ecuacion parametrica de la recta: p(alfa)=PNJ+alfa*PNJ --> p(alfa) = (1-alfa)*PNJ + alfa*PJ
   
-  //for(int i = 0; i < num_enemies; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
-  //  x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * x_pj;
-  //  y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
-  //}
+  for(int i = 0; i < num_enemies; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
+    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * x_pj;
+    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
+  }
   
   //Pintarlo
   //PNJ
@@ -48,7 +48,7 @@ void drawEnemies(){
     fill(255,0,255);
     ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
   }
-  //fill(255,0,0); //<>// //<>//
+  //fill(255,0,0); //<>// //<>// //<>//
   //ellipse(x_pnj[0],y_pnj[0],width/10.0,height/10.0);
   ////ellipse(x_pnj2,y_pnj2,width/10.0,height/10.0);
   //////PNJ2

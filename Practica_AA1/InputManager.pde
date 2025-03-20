@@ -40,14 +40,12 @@ void keyPressed() {
   
   
   if(CurrentScean == scean.ENEMY_SELECT){
- 
+  num_enemies = int(key) - 48;  // Convierte la tecla en número correctamente
   
-   
-  num_enemies = int(key);
-  CurrentScean = scean.GAME_PLAY;
-   
- 
- }
+    setUpEnemies(); // Llamar la función solo si el número es válido
+    CurrentScean = scean.GAME_PLAY;
+  
+}
   
   
  if(CurrentScean == scean.PLAYER_SELECT){
