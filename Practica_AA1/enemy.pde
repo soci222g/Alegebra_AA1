@@ -1,24 +1,26 @@
-int num_enemies = 20;
+int num_enemies;
 
 //VARIABLES
 boolean IsSpawned;
 float x_pj, y_pj;
-int NUM_PNJ = 5;
-float x_pnj[] = new float[NUM_PNJ];
-float y_pnj[] = new float[NUM_PNJ];
-float alfa[] = new float[NUM_PNJ];
+//int NUM_PNJ = 5;
+float x_pnj[];//new float[NUM_PNJ]; //<>//
+float y_pnj[];//new float[NUM_PNJ];
+float alfa[]; //new float[NUM_PNJ];
 
 //SETUP
-/*
-void setup(){
-  //Ventana
-  size(700,700);
+
+void setUpEnemies(){
   
-  for(int i = 0; i < NUM_PNJ; i++){
+  x_pnj = new float[num_enemies];
+  y_pnj = new float[num_enemies];
+//  alfa = new float[num_enemies];
+  
+  for(int i = 0; i < num_enemies; i++){ //for(int i = 0; i < NUM_PNJ; i++){
     x_pnj[i] = width/random(1.0,3.0);
     y_pnj[i] = height/random(1.0,3.0);
  //10 pasitos entre el PNJ y el PJ (alfa entre 0 y 1 para poder perseguir, si la ponemos en negativo huye)
-    alfa[i] = random(-0.01,3.0);
+    //alfa[i] = random(-0.01,3.0);
   }
   
   //Posición inicial del PNJ en medio de la ventana
@@ -26,7 +28,7 @@ void setup(){
 }
 //DRAW
 
-void draw(){
+void drawEnemies(){
   //Empezamos borrando el fondo de la ventana
   background(255,255,255); //FONDO DE COLOR BLANCO (92,44,120)
   //PNJ persigue a PJ
@@ -35,14 +37,14 @@ void draw(){
   //Calculos
   //Ecuacion parametrica de la recta: p(alfa)=PNJ+alfa*PNJ --> p(alfa) = (1-alfa)*PNJ + alfa*PJ
   
-  for(int i = 0; i < NUM_PNJ; i++){
-    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * x_pj;
-    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
-  }
+  //for(int i = 0; i < num_enemies; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
+  //  x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * x_pj;
+  //  y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
+  //}
   
   //Pintarlo
   //PNJ
-  for(int i = 0; i < NUM_PNJ; i++){
+  for(int i = 0; i < num_enemies; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
     fill(255,0,255);
     ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
   }
@@ -69,5 +71,5 @@ void draw(){
   //fill(0,255,0);
   //ellipse(x_pj,y_pj,width/5.0,height/5.0);
 }
-*/
+
 //FUNCIONES
