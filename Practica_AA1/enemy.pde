@@ -48,7 +48,7 @@ void drawEnemies(){
     fill(255,0,255);
     ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
   }
-  //fill(255,0,0); //<>//
+  //fill(255,0,0); //<>// //<>//
   //ellipse(x_pnj[0],y_pnj[0],width/10.0,height/10.0);
   ////ellipse(x_pnj2,y_pnj2,width/10.0,height/10.0);
   //////PNJ2
