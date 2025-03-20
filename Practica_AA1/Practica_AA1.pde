@@ -15,10 +15,10 @@ PrintWriter output;
   int PNJ1_radius;
   int PNJ1_distance; //distance form player
 
-////  boolean PNJ2_activated;
-////  PVector PNJ2_position;
-////  int PNJ2_distance; //distance form player
-////  int PNJ_hp;
+ boolean PNJ2_activated;
+ PVector PNJ2_position;
+ int PNJ2_distance; //distance form player
+ int PNJ_hp;
 
  
 
@@ -53,21 +53,39 @@ if(CurrentScean == scean.PLAYER_SELECT){
   if(CurrentScean == scean.ENEMY_SELECT){
   textSize(Tamany_Text_escollirElements);
   textAlign(CENTER);
-  text("Chose a number of enemis", width/2, height/4);
+  text("Chose a number of enemis between 1 and 9", width/2, height/4);
+  
   }
   
   
   
    if(CurrentScean == scean.GAME_PLAY){
         fill(0);
+        
+          if(isMouse == false){
+            MoviemtnPlayerKeyboard();
+          }
+          else{
+            MouseMovement();
+          }
+          
+          
+          
+          
+          
+          
         ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
    }
    if(CurrentScean == scean.WIN){
-   
+    textSize(Tamany_Text_escollirElements);
+    textAlign(CENTER);
+    text("You Win!!!", width/2, height/4);
    }
 
    if(CurrentScean == scean.LOST){
-   
+       textSize(Tamany_Text_escollirElements);
+       textAlign(CENTER);
+       text("you Lose!!!", width/2, height/4);
    }
 
 
@@ -75,7 +93,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
  // MoimentPNJ1Alai(); // moviment PNJ 1
   // MoviemtnPlayerKeyboardMoimentPNJ2Alai(); // Moviment PNJ 2
 
-MoviemtnPlayerKeyboard();
+
 
 
 

@@ -1,6 +1,7 @@
 int num_enemies = 20;
 
 //VARIABLES
+boolean IsSpawned;
 float x_pj, y_pj;
 int NUM_PNJ = 5;
 float x_pnj[] = new float[NUM_PNJ];
@@ -8,6 +9,7 @@ float y_pnj[] = new float[NUM_PNJ];
 float alfa[] = new float[NUM_PNJ];
 
 //SETUP
+/*
 void setup(){
   //Ventana
   size(700,700);
@@ -23,6 +25,7 @@ void setup(){
 
 }
 //DRAW
+
 void draw(){
   //Empezamos borrando el fondo de la ventana
   background(255,255,255); //FONDO DE COLOR BLANCO (92,44,120)
@@ -66,4 +69,5 @@ void draw(){
   //fill(0,255,0);
   //ellipse(x_pj,y_pj,width/5.0,height/5.0);
 }
+*/
 //FUNCIONES

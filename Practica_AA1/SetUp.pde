@@ -19,8 +19,7 @@ void SetUp_element(){
    fill(0,255,0);
   
   
-  
-  
+
    PNJ2_activated = false;
    PNJ2_position = new PVector(random(width),random(height));
    PNJ_hp = 3;

@@ -12,6 +12,44 @@
 
 void keyPressed() {
 
+ 
+ 
+  
+  if(CurrentScean == scean.GAME_PLAY){
+
+    
+       if (key == 'a' || key == 'A'){
+            
+            LeftDirection = true;
+        }
+       if (key == 'd'  || key == 'D'){
+            
+            RightDirection = true;
+        }
+        if (key == 'w'  || key == 'W'){
+            
+            UpDirection = true;
+        }  
+        if (key == 's'  || key == 'S'){
+            
+            downDirectipn = true;
+        }  
+    
+
+  }
+  
+  
+  if(CurrentScean == scean.ENEMY_SELECT){
+ 
+  
+   
+  num_enemies = int(key);
+  CurrentScean = scean.GAME_PLAY;
+   
+ 
+ }
+  
+  
  if(CurrentScean == scean.PLAYER_SELECT){
    if(key == '0'){
      isMouse = true;
@@ -23,23 +61,6 @@ void keyPressed() {
 
    }
  }
-  
-   if (key == 'a' || key == 'A'){
-        
-        LeftDirection = true;
-    }
-   if (key == 'd'  || key == 'D'){
-        
-        RightDirection = true;
-    }
-    if (key == 'w'  || key == 'W'){
-        
-        UpDirection = true;
-    }  
-    if (key == 's'  || key == 'S'){
-        
-        downDirectipn = true;
-    }  
 
 
 }
