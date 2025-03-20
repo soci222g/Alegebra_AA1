@@ -20,7 +20,7 @@ void setUpEnemies(){
     x_pnj[i] = width/random(1.0,3.0);
     y_pnj[i] = height/random(1.0,3.0);
  //10 pasitos entre el PNJ y el PJ (alfa entre 0 y 1 para poder perseguir, si la ponemos en negativo huye)
-    alfa[i] = random(-0.01,3.0);
+    alfa[i] = random(0.005, 0.02); //random(-0.01,3.0);
   }
   
   //Posición inicial del PNJ en medio de la ventana
@@ -32,14 +32,14 @@ void drawEnemies(){
   //Empezamos borrando el fondo de la ventana
   background(255,255,255); //FONDO DE COLOR BLANCO (92,44,120)
   //PNJ persigue a PJ
-  x_pj = mouseX;
-  y_pj = mouseY;
+  //x_pj = mouseX;
+  //y_pj = mouseY;
   //Calculos
   //Ecuacion parametrica de la recta: p(alfa)=PNJ+alfa*PNJ --> p(alfa) = (1-alfa)*PNJ + alfa*PJ
   
   for(int i = 0; i < num_enemies; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
-    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * x_pj;
-    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * y_pj;
+    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PJ_position.x;
+    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PJ_position.y;
   }
   
   //Pintarlo
