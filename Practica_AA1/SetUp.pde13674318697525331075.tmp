@@ -24,9 +24,7 @@ void SetUp_element(){
 
    PNJ2_activated = false;
    PNJ2_position = new PVector(random(width),random(height));
-   PNJ2_radius = 30;
-   
-   PNJ2_distance = 75;
+   PNJ2_distance = 5;
    PNJ2_Speed = 0.2;
 
    PNJ_hp = 3;

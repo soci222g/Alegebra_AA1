@@ -24,7 +24,7 @@ void setup(){
   background(255);
 
 
-SetUp_element();
+  SetUp_element();
    
 }
 
@@ -61,11 +61,11 @@ if(CurrentScean == scean.PLAYER_SELECT){
             MouseMovement();
           }
           MoimentPNJ1Alai();
+          MoimentPNJ2Alai();
           
           
           
-          
-          
+        fill(0,255,0);
         ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
    }
    if(CurrentScean == scean.WIN){
