@@ -28,10 +28,15 @@
     PNJ1_position.y = (1-PNJ1_Speed)*PNJ1_position.y + PJ_position.y * PNJ1_Speed;
   }
   
+     PNJ1_position.x = constrain(PNJ1_position.x, 0, width);
+     PNJ1_position.y = constrain(PNJ1_position.y, 0, height);
+  
   fill(255,0,0);
   ellipse(PNJ1_position.x,PNJ1_position.y, radios_Player, radios_Player);
   
 
+
+                
 }
 
 void MoimentPNJ2Alai(){
@@ -53,6 +58,9 @@ void MoimentPNJ2Alai(){
         PNJ2_position.y = (1-PNJ2_Speed)*PNJ2_position.y + PJ_position.y * PNJ2_Speed;
     }
   }
+  
+   PNJ2_position.x = constrain(PNJ2_position.x, 0, width);
+   PNJ2_position.y = constrain(PNJ2_position.y, 0, height);
   
   fill(0,0,255);
   ellipse(PNJ2_position.x,PNJ2_position.y, radios_Player, radios_Player);

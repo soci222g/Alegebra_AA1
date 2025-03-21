@@ -20,6 +20,8 @@ PrintWriter output;
 void setup(){
   //general elements (size, background
   
+  savedTime = millis();
+  
   size(600,600);
   background(255);
 
@@ -45,7 +47,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
   if(CurrentScean == scean.ENEMY_SELECT){
   textSize(Tamany_Text_escollirElements);
   textAlign(CENTER);
-  text("Chose a number of enemis between 1 and 9", width/2, height/4);
+  text("Chose a number of enemies between 1 and 9", width/2, height/4);
   
   }
   
@@ -62,12 +64,16 @@ if(CurrentScean == scean.PLAYER_SELECT){
           }
           MoimentPNJ1Alai();
           MoimentPNJ2Alai();
-          
-          
-          
+         
+        PJ_position.x = constrain(PJ_position.x, 0, width);
+        PJ_position.y = constrain(PJ_position.y, 0, height);  
+     
         fill(0,255,0);
         ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
-        
+        timer();
+        if(spawned_enemy < num_enemies){
+                spawnEnemies();
+        }
         drawEnemies();
         
         if(PNJ_hp <= 0 ){
