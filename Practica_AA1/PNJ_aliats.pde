@@ -10,7 +10,9 @@
  int PNJ2_distance; //distance form player
  int PNJ_hp;
  float PNJ2_Speed;
+ int Health_BarSize_Height;
  
+ int Health_BarSize_weight;
  
  void MoimentPNJ1Alai(){
   
@@ -55,5 +57,13 @@ void MoimentPNJ2Alai(){
   fill(0,0,255);
   ellipse(PNJ2_position.x,PNJ2_position.y, radios_Player, radios_Player);
   
+  fill(0,255,0);
+  rect(PNJ2_position.x - (Health_BarSize_weight * PNJ_hp) * 0.5 ,PNJ2_position.y - Health_BarSize_Height * 2, Health_BarSize_weight * PNJ_hp, Health_BarSize_Height);
+  
 
+}
+
+void takeDamage()
+{
+  PNJ_hp--;
 }

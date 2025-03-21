@@ -34,6 +34,7 @@ void keyPressed() {
             
             downDirectipn = true;
         }  
+   
     
 
   }

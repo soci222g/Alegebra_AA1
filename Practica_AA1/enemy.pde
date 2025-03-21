@@ -30,7 +30,6 @@ void setUpEnemies(){
 
 void drawEnemies(){
   //Empezamos borrando el fondo de la ventana
-  background(255,255,255); //FONDO DE COLOR BLANCO (92,44,120)
   //PNJ persigue a PJ
   //x_pj = mouseX;
   //y_pj = mouseY;

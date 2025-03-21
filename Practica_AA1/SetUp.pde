@@ -28,7 +28,8 @@ void SetUp_element(){
    
    PNJ2_distance = 75;
    PNJ2_Speed = 0.2;
-
+   Health_BarSize_weight = 20;
+   Health_BarSize_Height = 20;
    PNJ_hp = 3;
    
 
