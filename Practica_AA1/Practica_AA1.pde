@@ -12,11 +12,6 @@ PrintWriter output;
  
 
 
- 
-
-
-
-
 void setup(){
   //general elements (size, background
   
@@ -79,6 +74,12 @@ if(CurrentScean == scean.PLAYER_SELECT){
         if(PNJ_hp <= 0 ){
           CurrentScean = scean.LOST;
         }
+        if(EnemyKilled >= num_enemies){
+            CurrentScean = scean.WIN;
+        }
+        
+        
+        
    }
    if(CurrentScean == scean.WIN){
     textSize(Tamany_Text_escollirElements);

@@ -3,7 +3,8 @@
  PVector PJ_position;
  int radios_Player;
  int speed_PLayer;
-
+ int EnemyKilled; 
+ 
   boolean isMouse;
 
 
@@ -41,4 +42,27 @@ void MoviemtnPlayerKeyboard(){ //moviemet del PJ
      }
 
   
+}
+
+//spawned_enemy
+
+void collisonWithEnemy(){
+
+  
+  for(int i  = 0; i < spawned_enemy; i++){
+      PVector CollDistance = new PVector(x_pnj[i] - PJ_position.x, y_pnj[i] - PJ_position.y);
+      float Distance_moculo = sqrt(CollDistance.x*CollDistance.x + CollDistance.y * CollDistance.y);  
+      
+      if(Distance_moculo <= PNJ2_radius*2){
+      PNJ2_activated = true;
+      }
+  }
+  
+  
+  if(
+
+
+
+  EnemyKilled++
+
 }

@@ -46,8 +46,8 @@ void MoimentPNJ2Alai(){
   
   
   
-  if(Distance_moculo <= PNJ2_radius*2){
-  PNJ2_activated = true;
+  if(Distance_moculo <= Radius[i]*2){
+        // que pasa quan player colisiona con enemigo
   }
   
   
