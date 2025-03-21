@@ -10,7 +10,7 @@
 
   
   
-//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>// //<>//
+//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>//
 
 
 void MouseMovement(){

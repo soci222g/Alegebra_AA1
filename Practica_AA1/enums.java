@@ -2,6 +2,7 @@ enum scean{
   PLAYER_SELECT,
   ENEMY_SELECT,
   GAME_PLAY,
+  BOSS,
   WIN,
   LOST,
   COUTN

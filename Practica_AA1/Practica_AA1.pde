@@ -69,6 +69,10 @@ if(CurrentScean == scean.PLAYER_SELECT){
         ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
         
         drawEnemies();
+        
+        if(PNJ_hp <= 0 ){
+          CurrentScean = scean.LOST;
+        }
    }
    if(CurrentScean == scean.WIN){
     textSize(Tamany_Text_escollirElements);
