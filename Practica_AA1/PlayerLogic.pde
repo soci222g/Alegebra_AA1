@@ -3,10 +3,12 @@
  PVector PJ_position;
  int radios_Player;
  int speed_PLayer;
- int EnemyKilled; 
+ int EnemyKilled;
+ float AlfaPlayer;
  
   boolean isMouse;
 
+int goodPowerUpsCount;
 
 
   
@@ -16,8 +18,12 @@
 
 void MouseMovement(){ //moviment del mouse
 
- PJ_position.x = mouseX;
- PJ_position.y  = mouseY;
+// x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PNJ2_position.x;
+
+PJ_position.x = (1.0 - AlfaPlayer) *PJ_position.x + AlfaPlayer * mouseX;
+PJ_position.y = (1.0 - AlfaPlayer) *PJ_position.y + AlfaPlayer * mouseY;
+ //PJ_position.x = mouseX;
+ //PJ_position.y  = mouseY;
  
 }
 

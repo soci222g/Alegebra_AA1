@@ -12,6 +12,9 @@ void SetUp_element(){
   radios_Player = 30;
   PJ_position = new PVector(width/2,height/2);
   PJ_speed = 0.01;
+  AlfaPlayer = 0.3;
+  EnemyKilled = 0;
+  goodPowerUpsCount = 0;
   
  //initalize PNJ_aliats
    PNJ1_position = new PVector(width/2,0);

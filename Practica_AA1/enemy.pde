@@ -4,9 +4,9 @@ int current_enemies;
 //VARIABLES
 boolean IsSpawned[];
 boolean IsAlive[];
-float x_pj, y_pj; //<>//
+float x_pj, y_pj; //<>// //<>//
 //int NUM_PNJ = 5;
-float x_pnj[];//new float[NUM_PNJ]; //<>// //<>//
+float x_pnj[];//new float[NUM_PNJ]; //<>// //<>// //<>//
 float y_pnj[];//new float[NUM_PNJ];
 float alfa[];
 int radius[];//new float[NUM_PNJ];
@@ -99,7 +99,7 @@ void drawEnemies(){
           fill(255,0,255);
           ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
       }  
-  } //<>//
+  } //<>// //<>//
 }
 
 //FUNCIONES
