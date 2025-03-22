@@ -128,13 +128,13 @@ void Atack(){ //esta mig bug
    for(int i = 0; i < spawned_enemy; i++){ 
      if(canAtack[i] == true){
      
-      PVector CollDistance = new PVector(x_pnj[i] - PJ_position.x, y_pnj[i] - PJ_position.y);
+      PVector CollDistance = new PVector(x_pnj[i] - PNJ2_position.x, y_pnj[i] - PNJ2_position.y);
       float Distance_moculo = sqrt(CollDistance.x*CollDistance.x + CollDistance.y * CollDistance.y);
   
   
   
-     if(Distance_moculo <= PNJ2_radius*2){
-       
+     if(Distance_moculo <= PNJ2_radius*2 &&  canAtack[i] == true){
+       println("damages");
        takeDamage(); 
        canAtack[i] = false;
         
