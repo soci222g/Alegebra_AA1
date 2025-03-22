@@ -4,6 +4,8 @@ int current_enemies;
 //VARIABLES
 boolean IsSpawned[];
 boolean IsAlive[];
+boolean canAtack[];
+
 float x_pj, y_pj; //<>// //<>//
 //int NUM_PNJ = 5;
 float x_pnj[];//new float[NUM_PNJ]; //<>// //<>// //<>//
@@ -13,9 +15,16 @@ int radius[];//new float[NUM_PNJ];
 
 int enemy_radius;
 
+//spawn timer
   int savedTime;
-  int totalTime = 5000;
+  int totalTime = 5000; //5 segons entre spawns
   int passedTime;
+  
+  
+  //atack timer
+  int savedTimeAtack;
+  int totalTimeAtack = 3000; //5 segons entre spawns
+  int passedTimeAtack;
 //SETUP
 
 void timer(){
@@ -23,7 +32,6 @@ void timer(){
    passedTime = millis() - savedTime;
 
   if (passedTime > totalTime) {
-    println("5 seconds have passed!");
       savedTime = millis(); 
   }
 
@@ -33,6 +41,7 @@ void timer(){
   
   IsSpawned = new boolean[num_enemies];
   IsAlive = new boolean[num_enemies];
+  canAtack = new boolean[num_enemies];
   
   x_pnj = new float[num_enemies];
   y_pnj = new float[num_enemies];
@@ -71,6 +80,7 @@ void spawnEnemies(){
         
         alfa[spawned_enemy] = random(-0.05, 0.05); //random(-0.01,3.0);
         IsAlive[spawned_enemy] = true;
+        canAtack[spawned_enemy] = true;
         spawned_enemy++;
         current_enemies++;
       }   
@@ -101,5 +111,47 @@ void drawEnemies(){
       }  
   } //<>// //<>//
 }
+
+
+void timerAtack(){
+
+   passedTimeAtack = millis() - savedTimeAtack;
+
+  if (passedTimeAtack > totalTimeAtack) {
+      savedTimeAtack = millis(); 
+  }
+
+}
+
+void Atack(){ //esta mig bug
+
+   for(int i = 0; i < spawned_enemy; i++){ 
+     if(canAtack[i] == true){
+     
+      PVector CollDistance = new PVector(x_pnj[i] - PJ_position.x, y_pnj[i] - PJ_position.y);
+      float Distance_moculo = sqrt(CollDistance.x*CollDistance.x + CollDistance.y * CollDistance.y);
+  
+  
+  
+     if(Distance_moculo <= PNJ2_radius*2){
+       
+       takeDamage(); 
+       canAtack[i] = false;
+        
+      }
+     }
+         
+     
+     else{
+       timerAtack();
+       if(passedTimeAtack >= totalTimeAtack){
+         canAtack[i] = true;
+       }
+     }
+   
+   
+  }
+}
+
 
 //FUNCIONES

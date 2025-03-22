@@ -73,7 +73,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
      
         
         collisonWithEnemy();
-        
+        Atack();
         if(PNJ_hp <= 0 ){
           CurrentScean = scean.LOST;
         }
