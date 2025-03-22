@@ -63,8 +63,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
         PJ_position.x = constrain(PJ_position.x, 0, width);
         PJ_position.y = constrain(PJ_position.y, 0, height);  
      
-        fill(0,255,0);
-        ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
+        printPlayer();
         timer();
         if(spawned_enemy < num_enemies){
                 spawnEnemies();
@@ -75,7 +74,11 @@ if(CurrentScean == scean.PLAYER_SELECT){
         collisonWithEnemy();
         Atack();
         if(PNJ_hp <= 0 ){
-          CurrentScean = scean.LOST;
+           LooseHP();
+           PNJ_hp = 3;
+        }
+        if(HP_Player <= 0){
+         CurrentScean = scean.LOST;
         }
         if(EnemyKilled >= num_enemies){
             CurrentScean = scean.WIN;

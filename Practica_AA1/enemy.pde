@@ -133,7 +133,7 @@ void Atack(){ //esta mig bug
   
   
   
-     if(Distance_moculo <= PNJ2_radius*2 &&  canAtack[i] == true){
+     if(Distance_moculo <= PNJ2_radius*2 && canAtack[i] == true && IsAlive[i] == true){
        println("damages");
        takeDamage(); 
        canAtack[i] = false;

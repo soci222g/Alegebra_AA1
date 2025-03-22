@@ -5,6 +5,9 @@
  int speed_PLayer;
  int EnemyKilled;
  float AlfaPlayer;
+ int HP_Player;
+ int Health_BarSize_weight_PJ;
+ int  Health_BarSize_height_PJ;
  
   boolean isMouse;
 
@@ -72,4 +75,15 @@ void collisonWithEnemy(){
   
  
 
+}
+
+void printPlayer(){
+        fill(0,255,0);
+        ellipse( PJ_position.x, PJ_position.y, radios_Player, radios_Player);
+        fill(0,255,0);
+        rect(PJ_position.x - (Health_BarSize_weight * HP_Player) * 0.5 ,PJ_position.y - Health_BarSize_Height * 2, Health_BarSize_weight * HP_Player, Health_BarSize_Height);
+        
+}
+void LooseHP(){
+  HP_Player--;
 }

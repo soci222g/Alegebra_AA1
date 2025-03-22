@@ -13,8 +13,12 @@ void SetUp_element(){
   PJ_position = new PVector(width/2,height/2);
   PJ_speed = 0.01;
   AlfaPlayer = 0.3;
+  HP_Player = 3;
   EnemyKilled = 0;
   goodPowerUpsCount = 0;
+  Health_BarSize_weight_PJ = 30;
+  Health_BarSize_height_PJ = 30;
+  
   
  //initalize PNJ_aliats
    PNJ1_position = new PVector(width/2,0);
