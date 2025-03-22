@@ -11,6 +11,7 @@ float y_pnj[];//new float[NUM_PNJ];
 float alfa[];
 int radius[];//new float[NUM_PNJ];
 
+int enemy_radius;
 
   int savedTime;
   int totalTime = 5000;
@@ -36,6 +37,8 @@ void timer(){
   x_pnj = new float[num_enemies];
   y_pnj = new float[num_enemies];
   alfa = new float[num_enemies];
+  
+  enemy_radius = 50;
 
 }
 
@@ -49,6 +52,7 @@ void spawnEnemies(){
         alfa[spawned_enemy] = random(-0.05, 0.05); //random(-0.01,3.0);
         IsAlive[spawned_enemy] = true;
         spawned_enemy++;
+        current_enemies++;
       }   
               
   
@@ -60,8 +64,8 @@ void drawEnemies(){
   
   
   for(int i = 0; i < spawned_enemy; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
-    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PJ_position.x;
-    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PJ_position.y;
+    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PNJ2_position.x;
+    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PNJ2_position.y;
     
     // Limitar la posición dentro de la pantalla
         x_pnj[i] = constrain(x_pnj[i], 0, width);
@@ -71,8 +75,10 @@ void drawEnemies(){
   //Pintarlo
   //PNJ
   for(int i = 0; i < spawned_enemy; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
-    fill(255,0,255);
-    ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
+      if(IsAlive[i] == true){
+          fill(255,0,255);
+          ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
+      }  
   } //<>//
 }
 

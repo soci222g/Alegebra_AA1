@@ -41,10 +41,25 @@ void keyPressed() {
   
   
   if(CurrentScean == scean.ENEMY_SELECT){
-  num_enemies = int(key) - 48;  // Convierte la tecla en número correctamente
+ 
   
-    setUpEnemies(); // Llamar la función solo si el número es válido
-    CurrentScean = scean.GAME_PLAY;
+    if(int(key) - 48 > 0){
+      int temporalNumb = int(key) - 48;
+      num_enemies = ( num_enemies * 10) + temporalNumb;
+      
+   // Convierte la tecla en número correctamente
+      setUpEnemies(); // Llamar la función solo si el número es válido
+  }
+    
+  else{
+    printErrorChuseNumber();
+  }
+  
+  if( int(key) == 10){
+        println(num_enemies);
+     CurrentScean = scean.GAME_PLAY; 
+  }
+  
   
 }
   

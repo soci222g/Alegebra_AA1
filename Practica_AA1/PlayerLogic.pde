@@ -14,7 +14,7 @@
 //PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>//
 
 
-void MouseMovement(){
+void MouseMovement(){ //moviment del mouse
 
  PJ_position.x = mouseX;
  PJ_position.y  = mouseY;
@@ -49,20 +49,21 @@ void MoviemtnPlayerKeyboard(){ //moviemet del PJ
 void collisonWithEnemy(){
 
   
+  //mirem colisio del enemic
   for(int i  = 0; i < spawned_enemy; i++){
       PVector CollDistance = new PVector(x_pnj[i] - PJ_position.x, y_pnj[i] - PJ_position.y);
       float Distance_moculo = sqrt(CollDistance.x*CollDistance.x + CollDistance.y * CollDistance.y);  
       
-      if(Distance_moculo <= PNJ2_radius*2){
-      PNJ2_activated = true;
+   
+      if(Distance_moculo <= enemy_radius && IsAlive[i] == true){
+          EnemyKilled++;
+          IsAlive[i] = false;
+          current_enemies--;
       }
+   
+   
   }
   
-  
-  if(
-
-
-
-  EnemyKilled++
+ 
 
 }

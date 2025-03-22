@@ -9,7 +9,7 @@ PrintWriter output;
  
  
  final int Tamany_Text_escollirElements = 50;
- 
+  final int Tamany_Text_escollirenemics = 30;
 
 
 void setup(){
@@ -42,8 +42,8 @@ if(CurrentScean == scean.PLAYER_SELECT){
   if(CurrentScean == scean.ENEMY_SELECT){
   textSize(Tamany_Text_escollirElements);
   textAlign(CENTER);
-  text("Chose a number of enemies between 1 and 9", width/2, height/4);
-  
+  text("Chose a number of enemies: ", width/2, height/4);
+  text("pres enter to continue ", width/2, height/3);
   }
   
   
@@ -70,6 +70,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
                 spawnEnemies();
         }
         drawEnemies();
+     
+        
+        collisonWithEnemy();
         
         if(PNJ_hp <= 0 ){
           CurrentScean = scean.LOST;
@@ -121,10 +124,11 @@ if(CurrentScean == scean.PLAYER_SELECT){
 
 
 
-void CollisonPlayerAllai(){
-  
-  
-  
+void printErrorChuseNumber(){
+
+  textSize(Tamany_Text_escollirElements);
+  textAlign(CENTER);
+  text("ERROR: NUMERO NO VALIDO", width/2, height/2);
   
 }
 
