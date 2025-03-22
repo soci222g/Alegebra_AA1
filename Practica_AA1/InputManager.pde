@@ -44,8 +44,8 @@ void keyPressed() {
  
   
     if(int(key) - 48 > 0){
-      int temporalNumb = int(key) - 48;
-      num_enemies = ( num_enemies * 10) + temporalNumb;
+      int temporalNumb = int(key) - 48; //ens guardem el nou valor
+      num_enemies = ( num_enemies * 10) + temporalNumb; // formula per afagir un valor mes a un integer. mult el valor anterior per 10 i li sumes el que vols afagir.
       
    // Convierte la tecla en número correctamente
       setUpEnemies(); // Llamar la función solo si el número es válido

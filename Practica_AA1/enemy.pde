@@ -45,9 +45,29 @@ void timer(){
 void spawnEnemies(){
   if(passedTime > totalTime)
   {
-      
-        x_pnj[spawned_enemy] = width/random(1.0,3.0);
-        y_pnj[spawned_enemy] = height/random(1.0,3.0);
+      int PlaceSpawn = int(random(1,4));
+    
+        switch(PlaceSpawn){
+        case 1:
+        x_pnj[spawned_enemy] = width* 0.5;
+        y_pnj[spawned_enemy] = 0;
+        break;
+           case 2:
+        x_pnj[spawned_enemy] = width* 0.5;
+        y_pnj[spawned_enemy] = height;
+        break;
+           case 3:
+        x_pnj[spawned_enemy] = 0;
+        y_pnj[spawned_enemy] = height * 0.5;
+        break;
+           case 4:
+        x_pnj[spawned_enemy] = width;
+        y_pnj[spawned_enemy] = height * 0.5;
+        break;
+        }
+    
+    
+   
         
         alfa[spawned_enemy] = random(-0.05, 0.05); //random(-0.01,3.0);
         IsAlive[spawned_enemy] = true;
