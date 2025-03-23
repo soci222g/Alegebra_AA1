@@ -39,5 +39,7 @@ void SetUp_element(){
    Health_BarSize_Height = 20;
    PNJ_hp = 3;
    
+   
+   SetUP_portal();
 
 }

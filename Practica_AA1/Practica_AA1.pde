@@ -36,7 +36,6 @@ if(CurrentScean == scean.PLAYER_SELECT){
   text("Chose a Controles", width/2, height/4);
   text ("Mouse Controler - 0", width/2, height/2);
   text ("keyboard Controler - 1", width/2, height/1.75);
-
 } 
   
   if(CurrentScean == scean.ENEMY_SELECT){
@@ -69,7 +68,8 @@ if(CurrentScean == scean.PLAYER_SELECT){
                 spawnEnemies();
         }
         drawEnemies();
-     
+        
+      
         
         collisonWithEnemy();
         Atack();
@@ -81,8 +81,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
          CurrentScean = scean.LOST;
         }
         if(EnemyKilled >= num_enemies){
-            CurrentScean = scean.WIN;
-        }
+           drowPortal();
+           collidePlayer();   
+       }
         
         
         
