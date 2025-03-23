@@ -91,6 +91,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
    
    if(CurrentScean == scean.BOSS){
      dorwSafePositions();
+     spawn_walls();
+     
+     
      fill(0);
          
           if(isMouse == false){
@@ -131,6 +134,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
     textAlign(CENTER);
     text("You Win!!!", width/2, height/4);
     text("pres enter to go to menu!!!", width/2, height/3);
+    
+    text("Score: " , width/2, height/1.5);
+    text( puntuacio_text, width-width/3, height/1.5);
    }
 
    if(CurrentScean == scean.LOST){
@@ -138,6 +144,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
        textAlign(CENTER);
        text("you Lose!!!", width/2, height/4);
        text("press enter to go to menu!!!", width/2, height/3);
+       text("Score: " , width/2, height/1.5);
+       
+       text(puntuacio_text, width-width/3, height/1.5);
 
    } 
   

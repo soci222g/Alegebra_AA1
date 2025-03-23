@@ -36,8 +36,10 @@ void collidePlayer(){
       CurrentScean = scean.BOSS;
           PJ_position.x = width/2;
           PJ_position.y = height/2;
-      
-      
+          PNJ1_position.x = width/2;
+          PNJ1_position.y = height/2; 
+          PNJ2_position.x = width/2;
+          PNJ2_position.y = height/2;
   }  
 
 }

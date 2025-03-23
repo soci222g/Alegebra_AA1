@@ -13,6 +13,8 @@ void SetUp_element(){
   PJ_position = new PVector(width/2,height/2);
   PJ_speed = 0.005;
   AlfaPlayer = 0.3;
+  puntuaci = 0;
+  puntuacio_text = "0";
   HP_Player = 3;
   EnemyKilled = 0;
   goodPowerUpsCount = 0;
@@ -44,4 +46,5 @@ void SetUp_element(){
 
     Setup_safePositions();
 
+    Setup_Walls();
 }

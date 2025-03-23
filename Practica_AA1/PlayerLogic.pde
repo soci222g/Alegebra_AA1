@@ -9,6 +9,9 @@
  int Health_BarSize_weight_PJ;
  int  Health_BarSize_height_PJ;
  
+ int puntuaci;
+ String puntuacio_text;
+ 
   boolean isMouse;
 
 int goodPowerUpsCount;
@@ -16,7 +19,7 @@ int goodPowerUpsCount;
 
   
   
-//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>//
+//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>// //<>//
 
 
 void MouseMovement(){ //moviment del mouse
@@ -68,6 +71,7 @@ void collisonWithEnemy(){
           EnemyKilled++;
           IsAlive[i] = false;
           current_enemies--;
+          addPuntuacio();
       }
    
    
@@ -86,4 +90,9 @@ void printPlayer(){
 }
 void LooseHP(){
   HP_Player--;
+}
+void addPuntuacio(){
+    puntuaci += 100;
+    puntuacio_text = str(puntuaci);
+    println(puntuacio_text); //<>// //<>//
 }
