@@ -50,7 +50,7 @@ void Spawn_SafePoints(){
 
 }
 
-void dorwSafePositions(){ //<>// //<>//
+void dorwSafePositions(){ //<>//
      fill(0,255,0);
      for(int i = 0; i< NUM_OF_SAVEPOINTS; i++){
        if(isSaveActivated[i] == true)
@@ -99,9 +99,9 @@ void Setup_Walls(){
 
 void spawn_walls(){
     //wall 1
-   wall_x[0] = int(width*0.5);
+   wall_x[0] = int(width*0.5); //spawn
    wall_y[0] = int(height*0.20);
-   width_lenthg_ostacles[0] = int(width*0.33);
+   width_lenthg_ostacles[0] = int(width*0.33); //gandaria
    height_lenthg_ostacles[0] = int(height*0.4);
   
     //wall 1
@@ -110,13 +110,18 @@ void spawn_walls(){
    width_lenthg_ostacles[1] = int(width*0.33);
    height_lenthg_ostacles[1] = int(height*0.45);
 
-  //wall 1
-   wall_x[1] = int(width*0.5);
-   wall_y[1] = int(height*0.80);
-   width_lenthg_ostacles[1] = int(width*0.33);
-   height_lenthg_ostacles[1] = int(height*0.45);
+    
+   wall_x[2] = int(width*0.20);
+   wall_y[2] = int(height*0.60);
+   width_lenthg_ostacles[2] = 45;
+   height_lenthg_ostacles[2] = 350;
    
-   wall_x[2] = 25;
+   
+    
+   wall_x[3] = int(width*0.13);
+   wall_y[3] = int(height*0.35);
+   width_lenthg_ostacles[3] = 175;
+   height_lenthg_ostacles[3] = 150;
      
      
    for(int i = 0; i <NumberOfWalls; i++){

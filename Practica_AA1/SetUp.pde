@@ -25,8 +25,8 @@ void SetUp_element(){
  //initalize PNJ_aliats
    PNJ1_position = new PVector(width/2,0);
    PNJ1_radius = 10;
-   PNJ1_distance = 50;
-   PNJ1_Speed = 0.3;
+   PNJ1_distance = 75;
+   PNJ1_Speed = 0.1;
    fill(0,255,0);
   
   
@@ -35,8 +35,8 @@ void SetUp_element(){
    PNJ2_position = new PVector(random(width),random(height));
    PNJ2_radius = 12;
    
-   PNJ2_distance = 75;
-   PNJ2_Speed = 0.2;
+   PNJ2_distance = 50;
+   PNJ2_Speed = 0.08;
    Health_BarSize_weight = 20;
    Health_BarSize_Height = 20;
    PNJ_hp = 3;
