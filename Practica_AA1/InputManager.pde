@@ -6,7 +6,7 @@
   boolean LeftDirection;
   
   
-//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>// //<>// //<>//
+//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>// //<>// //<>// //<>//
 
 
 
@@ -39,6 +39,29 @@ void keyPressed() {
 
   }
   
+  if(CurrentScean == scean.BOSS){
+
+    
+       if (key == 'a' || key == 'A'){
+            
+            LeftDirection = true;
+        }
+       if (key == 'd'  || key == 'D'){
+            
+            RightDirection = true;
+        }
+        if (key == 'w'  || key == 'W'){
+            
+            UpDirection = true;
+        }  
+        if (key == 's'  || key == 'S'){
+            
+            downDirectipn = true;
+        }  
+   
+    
+
+  }
   
   if(CurrentScean == scean.ENEMY_SELECT){
  
@@ -76,8 +99,21 @@ void keyPressed() {
    }
  }
 
-
+  if(CurrentScean == scean.LOST){
+    if(int(key) == 10){
+      CurrentScean= scean.PLAYER_SELECT; 
+    }
+  }
+    if(CurrentScean == scean.WIN){
+    if(int(key) == 10){
+      CurrentScean= scean.PLAYER_SELECT; 
+    }
+    
+  
+  }
 }
+
+
 
 void keyReleased(){
 

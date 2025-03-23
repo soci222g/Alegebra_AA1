@@ -59,8 +59,8 @@ if(CurrentScean == scean.PLAYER_SELECT){
           MoimentPNJ1Alai();
           MoimentPNJ2Alai();
          
-        PJ_position.x = constrain(PJ_position.x, 0, width);
-        PJ_position.y = constrain(PJ_position.y, 0, height);  
+          PJ_position.x = constrain(PJ_position.x, 0, width);
+          PJ_position.y = constrain(PJ_position.y, 0, height);  
      
         printPlayer();
         timer();
@@ -88,38 +88,58 @@ if(CurrentScean == scean.PLAYER_SELECT){
         
         
    }
+   
+   if(CurrentScean == scean.BOSS){
+     dorwSafePositions();
+     fill(0);
+         
+          if(isMouse == false){
+            MoviemtnPlayerKeyboard();
+          }
+          else{
+            MouseMovement();
+          }
+          MoimentPNJ1Alai();
+          MoimentPNJ2Alai();
+          
+     
+          PJ_position.x = constrain(PJ_position.x, 0, width);
+          PJ_position.y = constrain(PJ_position.y, 0, height);  
+     
+        
+
+        printPlayer();
+        
+        //collision
+        collisionPlayerSafePoints();
+        
+        if(PNJ_hp <= 0 ){
+           LooseHP();
+           PNJ_hp = 3;
+        }
+        if(HP_Player <= 0){
+         CurrentScean = scean.LOST;
+        }
+        if(CurrentSafe >= 4){
+          CurrentScean = scean.WIN;
+        }
+        
+   }
+   
    if(CurrentScean == scean.WIN){
     textSize(Tamany_Text_escollirElements);
     textAlign(CENTER);
     text("You Win!!!", width/2, height/4);
+    text("pres enter to go to menu!!!", width/2, height/3);
    }
 
    if(CurrentScean == scean.LOST){
        textSize(Tamany_Text_escollirElements);
        textAlign(CENTER);
        text("you Lose!!!", width/2, height/4);
-   }
+       text("press enter to go to menu!!!", width/2, height/3);
 
-
-  // moviment player
- // MoimentPNJ1Alai(); // moviment PNJ 1
-  // MoviemtnPlayerKeyboardMoimentPNJ2Alai(); // Moviment PNJ 2
-
-
-
-
-
-
-
-
-
-//printantge Player
- 
-  
-  
-  
-  
-  
+   } 
   
 }
 
@@ -135,15 +155,3 @@ void printErrorChuseNumber(){
   text("ERROR: NUMERO NO VALIDO", width/2, height/2);
   
 }
-
-
-/*
-void activatePNJ(boolean PNJActivate){
-
-  PNJActivate = true;
-}
-
-*/
-
-
-//moviment PNJ 2

@@ -9,9 +9,9 @@ void SetUp_element(){
   
   
   //initalize player
-  radios_Player = 30;
+  radios_Player = 15;
   PJ_position = new PVector(width/2,height/2);
-  PJ_speed = 0.01;
+  PJ_speed = 0.005;
   AlfaPlayer = 0.3;
   HP_Player = 3;
   EnemyKilled = 0;
@@ -22,7 +22,7 @@ void SetUp_element(){
   
  //initalize PNJ_aliats
    PNJ1_position = new PVector(width/2,0);
-   PNJ1_radius = 25;
+   PNJ1_radius = 10;
    PNJ1_distance = 50;
    PNJ1_Speed = 0.3;
    fill(0,255,0);
@@ -31,7 +31,7 @@ void SetUp_element(){
 
    PNJ2_activated = false;
    PNJ2_position = new PVector(random(width),random(height));
-   PNJ2_radius = 30;
+   PNJ2_radius = 12;
    
    PNJ2_distance = 75;
    PNJ2_Speed = 0.2;
@@ -40,6 +40,8 @@ void SetUp_element(){
    PNJ_hp = 3;
    
    
-   SetUP_portal();
+     SetUP_portal();
+
+    Setup_safePositions();
 
 }

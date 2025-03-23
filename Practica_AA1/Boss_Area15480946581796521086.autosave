@@ -1,0 +1,24 @@
+//punts que as de agafar perque guanys
+final int NUM_OF_SAVEPOINTS = 4; 
+int CurrentSafe;
+
+PVector[] positionsSafePoints;
+int[] isSaveActivated;
+int Distance_SafePoints;
+
+
+PVector[] deadlyCubesPosition;
+boolean[] activate;
+int[] width_lenthg_ostacles;
+int[] height_lenthg_ostacles;
+
+
+void Setup_safePositions(){ //setup inicial
+  CurrentSafe = 0;
+    positionsSafePoints = new PVector[NUM_OF_SAVEPOINTS];
+    isSaveActivated = new int[NUM_OF_SAVEPOINTS];
+    Distance_SafePoints = 10;
+}
+
+
+void drow

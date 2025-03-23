@@ -25,6 +25,7 @@ void drowPortal(){
   fill(0);
   rectMode(CENTER);
   rect( width - width_lenthg*0.5, height*0.5, width_lenthg, height_length);
+  Spawn_SafePoints();
 }
 
 
@@ -33,6 +34,10 @@ void drowPortal(){
 void collidePlayer(){
   if(PJ_position.x >= left){
       CurrentScean = scean.BOSS;
+          PJ_position.x = width/2;
+          PJ_position.y = height/2;
+      
+      
   }  
 
 }
