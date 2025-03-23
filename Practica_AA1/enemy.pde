@@ -49,12 +49,13 @@ void timer(){
   
   enemy_radius = 50;
 
+  println("Total enemies: ", num_enemies);
 }
 
 void spawnEnemies(){
   if(passedTime > totalTime)
   {
-      int PlaceSpawn = int(random(1,4));
+      int PlaceSpawn = int(random(4)+1);
     
         switch(PlaceSpawn){
         case 1:
@@ -84,18 +85,34 @@ void spawnEnemies(){
         spawned_enemy++;
         current_enemies++;
       }   
-              
+      
+        println("Spawned enemies: ", spawned_enemy); //Aqui es pot veure per consola la quantitat d'enemics que han fet spawn
   
 }
 //DRAW
 
 void drawEnemies(){
   
-  
-  
   for(int i = 0; i < spawned_enemy; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
-    x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PNJ2_position.x;
-    y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PNJ2_position.y;
+    if (i < num_enemies / 2) { 
+      // **Enemigos que huyen del jugador**
+      PVector escape = new PVector(x_pnj[i] - x_pj, y_pnj[i] - y_pj);
+      escape.normalize();
+      x_pnj[i] += escape.x * 2;
+      y_pnj[i] += escape.y * 2;
+
+    } else if (i < (num_enemies * 3) / 4) { 
+      // **Enemigos que persiguen a PNJ1**
+      x_pnj[i] = (1.0 - alfa[i]) * x_pnj[i] + alfa[i] * PNJ1_position.x;
+      y_pnj[i] = (1.0 - alfa[i]) * y_pnj[i] + alfa[i] * PNJ1_position.y;
+    } else { 
+      // **Enemigos que persiguen a PNJ2**
+      x_pnj[i] = (1.0 - alfa[i]) * x_pnj[i] + alfa[i] * PNJ2_position.x;
+      y_pnj[i] = (1.0 - alfa[i]) * y_pnj[i] + alfa[i] * PNJ2_position.y;
+    }
+    //ESTO ES COMO FUNCIONA CORRECTAMENTE DE FORMA BASICA, SIN TOMAR EN CUENTA LOS COMPORTAMIENTOS QUE SE PIDEN EN EL ENUNCIADO
+    //x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PNJ2_position.x;
+    //y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PNJ2_position.y;
     
     // Limitar la posición dentro de la pantalla
         x_pnj[i] = constrain(x_pnj[i], 0, width);
