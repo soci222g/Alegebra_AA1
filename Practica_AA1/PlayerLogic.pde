@@ -19,7 +19,7 @@ int goodPowerUpsCount;
 
   
   
-//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>// //<>//
+//PJ_position.y = -height * PJ_speed + PJ_position.x * (1-PJ_speed); //<>//
 
 
 void MouseMovement(){ //moviment del mouse
@@ -94,5 +94,5 @@ void LooseHP(){
 void addPuntuacio(){
     puntuaci += 100;
     puntuacio_text = str(puntuaci);
-    println(puntuacio_text); //<>// //<>//
+    println(puntuacio_text); //<>//
 }

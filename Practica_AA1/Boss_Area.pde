@@ -18,6 +18,13 @@ int[] width_lenthg_ostacles;
 int[] height_lenthg_ostacles;
 
 
+//polayer up,down,Left,Right
+
+
+
+
+
+
 void Setup_safePositions(){ //setup inicial
   CurrentSafe = 0;
    
@@ -129,5 +136,51 @@ void spawn_walls(){
      rect( wall_x[i],  wall_y[i], width_lenthg_ostacles[i], height_lenthg_ostacles[i]);
    }
 
+  
+}
+
+void CollideWall(){
+  float base_position_x = 0;
+    float base_position_y = 0;
+  float TestX = PJ_position.x;
+  float TestY = PJ_position.y;
+  
+  
+  
+  for(int i = 0; i <NumberOfWalls; i++){
+  
+    base_position_x = wall_x[i]-width_lenthg_ostacles[i]*0.5;
+    base_position_y = wall_y[i] - height_lenthg_ostacles[i]*0.5;
+ 
+     
+    
+    
+    if(PJ_position.x <  base_position_x){ //mirem si esta mes aprop la dreta o la esquera
+        TestX = base_position_x;
+    }
+    else if( PJ_position.x > base_position_x + width_lenthg_ostacles[i]){
+    TestX = base_position_x + width_lenthg_ostacles[i]  ;  
+    }
+    if(PJ_position.y < base_position_y){ //mirem a on esta mes apro si adal o abaix
+      TestY =  base_position_y;
+    }
+    else if(PJ_position.y > base_position_y + height_lenthg_ostacles[i]){
+       TestY =  base_position_y + height_lenthg_ostacles[i];
+    }
+    
+    
+    //get closes distance fomr edg 
+    float ClosDisX = PJ_position.x -  TestX;
+    float ClosDisY = PJ_position.y -  TestY;
+    float Distanca = sqrt((ClosDisX*ClosDisX)+ (ClosDisY*ClosDisY));
+   ; 
+    
+    if(Distanca <= radios_Player){
+        takeDamage(); 
+    }
+
+  }
+  
+  
   
 }

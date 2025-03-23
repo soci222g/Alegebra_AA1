@@ -115,7 +115,9 @@ if(CurrentScean == scean.PLAYER_SELECT){
         
         //collision
         collisionPlayerSafePoints();
+        CollideWall();
         
+        //logic game
         if(PNJ_hp <= 0 ){
            LooseHP();
            PNJ_hp = 3;
