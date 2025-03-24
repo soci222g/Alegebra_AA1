@@ -9,6 +9,7 @@ boolean[] isSaveActivated;
 int radius_SafePoint;
 
 
+
 final int NumberOfWalls = 10;
 
 
@@ -93,7 +94,8 @@ void Setup_Walls(){
   wall_y = new int[NumberOfWalls];
   width_lenthg_ostacles = new int[NumberOfWalls];
    height_lenthg_ostacles = new int[NumberOfWalls];
-    
+   
+   
     //donem valors vase perque aixi podem fer tans com bolgem i despres ja'sajustera el numero de parets
     for(int i = 0; i <NumberOfWalls; i++){
         wall_x[i] = 0;
@@ -118,7 +120,7 @@ void spawn_walls(){
    height_lenthg_ostacles[1] = int(height*0.45);
 
     
-   wall_x[2] = int(width*0.20);
+   wall_x[2] = int(width*0.22);
    wall_y[2] = int(height*0.60);
    width_lenthg_ostacles[2] = 45;
    height_lenthg_ostacles[2] = 350;
@@ -127,8 +129,9 @@ void spawn_walls(){
     
    wall_x[3] = int(width*0.13);
    wall_y[3] = int(height*0.35);
-   width_lenthg_ostacles[3] = 175;
+   width_lenthg_ostacles[3] = 160;
    height_lenthg_ostacles[3] = 150;
+   
    
    wall_x[4] = int(width*0.88);
    wall_y[4] = int(height*0.5);
@@ -139,7 +142,17 @@ void spawn_walls(){
    wall_y[5] = int(height*0.25);
    width_lenthg_ostacles[5] = 50;
    height_lenthg_ostacles[5] = 150;
+   
+   
+   wall_x[6] = int(width*0.79);
+   wall_y[6] = int(height*0.75);
+   width_lenthg_ostacles[6] = 150;
+   height_lenthg_ostacles[6] = 25;
      
+   wall_x[7] = int(width*0.90);
+   wall_y[7] = int(height*0.85);
+   width_lenthg_ostacles[7] = 150;
+   height_lenthg_ostacles[7] = 25;
      
    for(int i = 0; i <NumberOfWalls; i++){
      fill(255,0,0);
@@ -150,14 +163,11 @@ void spawn_walls(){
 }
 
 void CollideWall(){
+   
+  for(int i = 0; i < NumberOfWalls; i++){
   
-  
-  
-  
-  for(int i = 0; i <NumberOfWalls; i++){
-  
-   float base_position_x = wall_x[i]-width_lenthg_ostacles[i]*0.5;
-   float base_position_y = wall_y[i] - height_lenthg_ostacles[i]*0.5;
+   float base_position_x = wall_x[i] - width_lenthg_ostacles[i]*0.5; //posem la pater esquerra
+   float base_position_y = wall_y[i] - height_lenthg_ostacles[i]*0.5; //posem la parte de adal
  
    float TestX = PJ_position.x;
    float TestY = PJ_position.y;
@@ -166,13 +176,13 @@ void CollideWall(){
     if(PJ_position.x <  base_position_x){ //mirem si esta mes aprop la dreta o la esquera
         TestX = base_position_x;
     }
-    else if( PJ_position.x > base_position_x + width_lenthg_ostacles[i]){
-    TestX = base_position_x + width_lenthg_ostacles[i]  ;  
+    else if( PJ_position.x > (base_position_x + width_lenthg_ostacles[i])){
+      TestX = base_position_x + width_lenthg_ostacles[i];  
     }
     if(PJ_position.y < base_position_y){ //mirem a on esta mes apro si adal o abaix
       TestY =  base_position_y;
     }
-    else if(PJ_position.y > base_position_y + height_lenthg_ostacles[i]){
+    else if(PJ_position.y > (base_position_y + height_lenthg_ostacles[i])){
        TestY =  base_position_y + height_lenthg_ostacles[i];
     }
     
@@ -186,7 +196,7 @@ void CollideWall(){
     if(Distanca <= radios_Player){
         takeDamage(); 
     }
-
+   
   }
   
   
