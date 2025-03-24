@@ -49,7 +49,8 @@ if(CurrentScean == scean.PLAYER_SELECT){
   
   
    if(CurrentScean == scean.GAME_PLAY){
-        fill(0);
+     GlobalTimer();  
+       fill(0);
         
           if(isMouse == false){
             MoviemtnPlayerKeyboard();

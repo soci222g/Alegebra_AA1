@@ -66,7 +66,7 @@ void MoimentPNJ2Alai(){
   ellipse(PNJ2_position.x,PNJ2_position.y, radios_Player, radios_Player);
   
   fill(0,255,0);
-  rect(PNJ2_position.x - (Health_BarSize_weight * PNJ_hp) * 0.5 ,PNJ2_position.y - Health_BarSize_Height * 2, Health_BarSize_weight * PNJ_hp, Health_BarSize_Height);
+  rect(PNJ2_position.x - (Health_BarSize_weight * (PNJ_hp*0.5)) * 0.5 ,PNJ2_position.y - Health_BarSize_Height * 2, Health_BarSize_weight * (PNJ_hp*0.5), Health_BarSize_Height);
   
 
 }
