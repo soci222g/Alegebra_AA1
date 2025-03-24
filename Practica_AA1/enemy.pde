@@ -75,9 +75,6 @@ void spawnEnemies(){
         y_pnj[spawned_enemy] = height * 0.5;
         break;
         }
-    
-    
-   
         
         alfa[spawned_enemy] = random(-0.05, 0.05); //random(-0.01,3.0);
         IsAlive[spawned_enemy] = true;
@@ -86,7 +83,7 @@ void spawnEnemies(){
         current_enemies++;
       }   
       
-        println("Spawned enemies: ", spawned_enemy); //Aqui es pot veure per consola la quantitat d'enemics que han fet spawn
+        //println("Spawned enemies: ", spawned_enemy); //Aqui es pot veure per consola la quantitat d'enemics que han fet spawn
   
 }
 //DRAW
@@ -124,7 +121,7 @@ void drawEnemies(){
   for(int i = 0; i < spawned_enemy; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
       if(IsAlive[i] == true){
           fill(255,0,255);
-          ellipse(x_pnj[i],y_pnj[i],width/10.0,height/10.0);
+          ellipse(x_pnj[i],y_pnj[i],enemy_radius,enemy_radius);
       }  
   } //<>// //<>//
 }

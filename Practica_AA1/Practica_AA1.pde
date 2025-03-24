@@ -23,6 +23,7 @@ void setup(){
 
 SetUp_element();
    setUpEnemies();
+   setUpPowers();
 }
 
 
@@ -69,6 +70,10 @@ if(CurrentScean == scean.PLAYER_SELECT){
         }
         drawEnemies();
         
+        
+        //powerUps
+        checkPowerUpCollision();
+        drawPowers();
       
         
         collisonWithEnemy();
@@ -160,7 +165,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
 
 
 void printErrorChuseNumber(){
-
+  
   textSize(Tamany_Text_escollirElements);
   textAlign(CENTER);
   text("ERROR: NUMERO NO VALIDO", width/2, height/2);
