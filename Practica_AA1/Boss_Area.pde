@@ -46,11 +46,11 @@ void Spawn_SafePoints(){
     Pos_safe_x[1] = width / 12;
     Pos_safe_y[1] = height - height/3;
 //safe point 3
-    Pos_safe_x[2] =  width * 0.85;
-    Pos_safe_y[2] = height / 6;
+    Pos_safe_x[2] =  width * 0.95;
+    Pos_safe_y[2] = height / 5;
     //safe point 4
     Pos_safe_x[3] = width * 0.85;
-    Pos_safe_y[3] = height - height / 12;
+    Pos_safe_y[3] = height - height / 20;
     
     for(int i = 0; i< NUM_OF_SAVEPOINTS; i++){
         isSaveActivated[i] = true;
@@ -133,12 +133,12 @@ void spawn_walls(){
    height_lenthg_ostacles[3] = 150;
    
    
-   wall_x[4] = int(width*0.88);
+   wall_x[4] = int(width*0.94);
    wall_y[4] = int(height*0.5);
    width_lenthg_ostacles[4] = 175;
    height_lenthg_ostacles[4] = 150;
    
-   wall_x[5] = int(width*0.78);
+   wall_x[5] = int(width*0.84);
    wall_y[5] = int(height*0.25);
    width_lenthg_ostacles[5] = 50;
    height_lenthg_ostacles[5] = 150;
@@ -150,7 +150,7 @@ void spawn_walls(){
    height_lenthg_ostacles[6] = 25;
      
    wall_x[7] = int(width*0.90);
-   wall_y[7] = int(height*0.85);
+   wall_y[7] = int(height*0.90);
    width_lenthg_ostacles[7] = 150;
    height_lenthg_ostacles[7] = 25;
      

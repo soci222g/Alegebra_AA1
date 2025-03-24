@@ -78,7 +78,7 @@ void keyPressed() {
     printErrorChuseNumber();
   }
   
-  if( int(key) == 10){
+  if(int(key) == 10 && num_enemies > 1){
         println(num_enemies);
      CurrentScean = scean.GAME_PLAY; 
   }
