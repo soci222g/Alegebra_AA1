@@ -9,30 +9,25 @@ float powerups_radius = 20;
 
 void powerUps(int index){
   
-  switch(powerUp){
+  switch(index){
     case 0:
-      background(0);
       radios_Player = 30;
       break;
     case 1:
-      background(0);
-      radios_Player = 50; //mes rapid
+      PJ_speed = 0.01; //mes rapid
       break;  
     case 2:
-      background(0);
-      //enemy_radius = 20; //enemics mes petits
+      enemy_radius = 20; //enemics mes petits
       break;
     case 3: //radi enemic més gran
-      background(0);
-      //enemy_radius = 70;
+      enemy_radius = 70;
     break;
     case 4: //player mes lent
-      background(0);
-      //enemy_radius = 70;
+      PJ_speed = 0.001;
     break;
     case 5: //pnjs mes lents
-      background(0);
-      //enemy_radius = 70;
+      PNJ1_Speed = 0.001;
+      PNJ2_Speed = 0.001;
     break;
   }
 }
