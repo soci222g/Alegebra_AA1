@@ -96,6 +96,7 @@ if(CurrentScean == scean.PLAYER_SELECT){
    }
    
    if(CurrentScean == scean.BOSS){
+     GlobalTimer(); 
      dorwSafePositions();
      spawn_walls();
      

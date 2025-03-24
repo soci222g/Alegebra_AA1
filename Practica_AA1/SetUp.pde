@@ -1,6 +1,6 @@
 void SetUp_element(){
 
-  
+  num_enemies = 0;
    CurrentScean = scean.PLAYER_SELECT;
 
   

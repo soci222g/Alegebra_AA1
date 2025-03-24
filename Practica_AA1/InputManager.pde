@@ -102,11 +102,13 @@ void keyPressed() {
   if(CurrentScean == scean.LOST){
     if(int(key) == 10){
       CurrentScean= scean.PLAYER_SELECT; 
+      SetUp_element();
     }
   }
     if(CurrentScean == scean.WIN){
     if(int(key) == 10){
       CurrentScean= scean.PLAYER_SELECT; 
+      SetUp_element();
     }
     
   
