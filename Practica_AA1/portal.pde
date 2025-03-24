@@ -14,11 +14,8 @@ void SetUP_portal(){
     height_length = 30;
     isActivated = false;
     Pos_portal_x = width * 0.5;
-    Pos_portal_y = height * 0.5;
-    
-  
+    Pos_portal_y = height * 0.5; 
 }
-
 
 void drowPortal(){
   isActivated = true;
@@ -27,9 +24,6 @@ void drowPortal(){
   rect( Pos_portal_x, Pos_portal_y, width_lenthg, height_length);
   Spawn_SafePoints();
 }
-
-
-
 
 void collidePlayer(){
   
@@ -61,6 +55,7 @@ void collidePlayer(){
    
     
     if(Distanca <= radios_Player){
+       resetStats();
     CurrentScean = scean.BOSS;
           PJ_position.x = width/2;
           PJ_position.y = height/2;
@@ -70,5 +65,4 @@ void collidePlayer(){
           PNJ2_position.y = height/2;
     }
  
-
 }

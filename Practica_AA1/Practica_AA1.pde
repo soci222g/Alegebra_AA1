@@ -21,7 +21,7 @@ void setup(){
   background(255);
 
 
-SetUp_element();
+  SetUp_element();
    setUpEnemies();
    setUpPowers();
 }
@@ -73,9 +73,10 @@ if(CurrentScean == scean.PLAYER_SELECT){
         
         
         //powerUps
+        if(PNJ2_activated){
         checkPowerUpCollision();
         drawPowers();
-      
+        }
         
         collisonWithEnemy();
         Atack();
@@ -86,20 +87,17 @@ if(CurrentScean == scean.PLAYER_SELECT){
         if(HP_Player <= 0){
          CurrentScean = scean.LOST;
         }
-        if(EnemyKilled >= num_enemies){
+        if(countPowerUps == 3){
            drowPortal();
            collidePlayer();   
        }
-        
-        
-        
+   
    }
    
    if(CurrentScean == scean.BOSS){
      GlobalTimer(); 
      dorwSafePositions();
      spawn_walls();
-     
      
      fill(0);
          
@@ -111,12 +109,10 @@ if(CurrentScean == scean.PLAYER_SELECT){
           }
           MoimentPNJ1Alai();
           MoimentPNJ2Alai();
-          
-     
+               
           PJ_position.x = constrain(PJ_position.x, 0, width);
           PJ_position.y = constrain(PJ_position.y, 0, height);  
-     
-        
+   
 
         printPlayer();
         

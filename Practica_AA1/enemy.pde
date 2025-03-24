@@ -107,9 +107,6 @@ void drawEnemies(){
       x_pnj[i] = (1.0 - alfa[i]) * x_pnj[i] + alfa[i] * PNJ2_position.x;
       y_pnj[i] = (1.0 - alfa[i]) * y_pnj[i] + alfa[i] * PNJ2_position.y;
     }
-    //ESTO ES COMO FUNCIONA CORRECTAMENTE DE FORMA BASICA, SIN TOMAR EN CUENTA LOS COMPORTAMIENTOS QUE SE PIDEN EN EL ENUNCIADO
-    //x_pnj[i] = (1.0 - alfa[i]) *x_pnj[i] + alfa[i] * PNJ2_position.x;
-    //y_pnj[i] = (1.0 - alfa[i]) *y_pnj[i] + alfa[i] * PNJ2_position.y;
     
     // Limitar la posición dentro de la pantalla
         x_pnj[i] = constrain(x_pnj[i], 0, width);
@@ -118,12 +115,12 @@ void drawEnemies(){
   
   //Pintarlo
   //PNJ
-  for(int i = 0; i < spawned_enemy; i++){ //  for(int i = 0; i < NUM_PNJ; i++){
+  for(int i = 0; i < spawned_enemy; i++){
       if(IsAlive[i] == true){
           fill(255,0,255);
           ellipse(x_pnj[i],y_pnj[i],enemy_radius,enemy_radius);
       }  
-  } //<>// //<>//
+  }  //<>//
 }
 
 
@@ -134,7 +131,6 @@ void timerAtack(){
   if (passedTimeAtack > totalTimeAtack) {
       savedTimeAtack = millis(); 
   }
-
 }
 
 void Atack(){ //esta mig bug
@@ -145,27 +141,18 @@ void Atack(){ //esta mig bug
       PVector CollDistance = new PVector(x_pnj[i] - PNJ2_position.x, y_pnj[i] - PNJ2_position.y);
       float Distance_moculo = sqrt(CollDistance.x*CollDistance.x + CollDistance.y * CollDistance.y);
   
-  
-  
      if(Distance_moculo <= PNJ2_radius*2 && canAtack[i] == true && IsAlive[i] == true){
        println("damages");
        takeDamage(); 
-       canAtack[i] = false;
-        
+       canAtack[i] = false;    
       }
-     }
-         
-     
+     }     
      else{
        timerAtack();
        if(passedTimeAtack >= totalTimeAtack){
          canAtack[i] = true;
        }
      }
-   
-   
+ 
   }
 }
-
-
-//FUNCIONES

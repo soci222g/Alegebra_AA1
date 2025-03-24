@@ -2,11 +2,6 @@ void SetUp_element(){
 
   num_enemies = 0;
    CurrentScean = scean.PLAYER_SELECT;
-
-  
- 
-  
-  
   
   //initalize player
   radios_Player = 15;
@@ -28,8 +23,6 @@ void SetUp_element(){
    PNJ1_distance = 75;
    PNJ1_Speed = 0.1;
    fill(0,255,0);
-  
-  
 
    PNJ2_activated = false;
    PNJ2_position = new PVector(random(width),random(height));
@@ -42,7 +35,7 @@ void SetUp_element(){
    PNJ_hp = 6; //posem 6 perque els enemic pegan 2 cops i no sabem per que aixi que posem 6 i seran tres inpactes
    
    
-     SetUP_portal();
+    SetUP_portal();
 
     Setup_safePositions();
 

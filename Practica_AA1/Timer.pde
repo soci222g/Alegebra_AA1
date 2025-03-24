@@ -1,6 +1,6 @@
 
 float LastSaveTimer;
-final int EndTimer = 12000;
+final int EndTimer = 120000;
 float currentTimer;
 
 
