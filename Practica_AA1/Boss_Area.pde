@@ -9,7 +9,7 @@ boolean[] isSaveActivated;
 int radius_SafePoint;
 
 
-final int NumberOfWalls = 7;
+final int NumberOfWalls = 10;
 
 
 int[] wall_x;
@@ -129,6 +129,16 @@ void spawn_walls(){
    wall_y[3] = int(height*0.35);
    width_lenthg_ostacles[3] = 175;
    height_lenthg_ostacles[3] = 150;
+   
+   wall_x[4] = int(width*0.88);
+   wall_y[4] = int(height*0.5);
+   width_lenthg_ostacles[4] = 175;
+   height_lenthg_ostacles[4] = 150;
+   
+   wall_x[5] = int(width*0.78);
+   wall_y[5] = int(height*0.25);
+   width_lenthg_ostacles[5] = 50;
+   height_lenthg_ostacles[5] = 150;
      
      
    for(int i = 0; i <NumberOfWalls; i++){
@@ -140,20 +150,18 @@ void spawn_walls(){
 }
 
 void CollideWall(){
-  float base_position_x = 0;
-    float base_position_y = 0;
-  float TestX = PJ_position.x;
-  float TestY = PJ_position.y;
+  
   
   
   
   for(int i = 0; i <NumberOfWalls; i++){
   
-    base_position_x = wall_x[i]-width_lenthg_ostacles[i]*0.5;
-    base_position_y = wall_y[i] - height_lenthg_ostacles[i]*0.5;
+   float base_position_x = wall_x[i]-width_lenthg_ostacles[i]*0.5;
+   float base_position_y = wall_y[i] - height_lenthg_ostacles[i]*0.5;
  
-     
-    
+   float TestX = PJ_position.x;
+   float TestY = PJ_position.y;
+      
     
     if(PJ_position.x <  base_position_x){ //mirem si esta mes aprop la dreta o la esquera
         TestX = base_position_x;
