@@ -39,7 +39,7 @@ void SetUp_element(){
    PNJ2_Speed = 0.08;
    Health_BarSize_weight = 20;
    Health_BarSize_Height = 20;
-   PNJ_hp = 3;
+   PNJ_hp = 6; //posem 6 perque els enemic pegan 2 cops i no sabem per que aixi que posem 6 i seran tres inpactes
    
    
      SetUP_portal();
